@@ -17,13 +17,18 @@ module.exports.router = (req, res, next = ()=>{}) => {
   console.log('Serving request type ' + req.method + ' for url ' + req.url);
   res.writeHead(200, headers);
   if(req.method === 'GET'){
-    // var index = Math.floor(Math.random()*validMessages.length);
-    // res.write(validMessages[index]);
-    let message = messageQueue.dequeue();
-    if(message){
-      res.write(message);
-    } else {
-      res.write('try again');
+    if(req.url.includes('/message')){
+      // var index = Math.floor(Math.random()*validMessages.length);
+      // res.write(validMessages[index]);
+      let message = messageQueue.dequeue();
+      if(message){
+        res.write(message);
+      } else {
+        res.write('try again');
+      }
+    }
+    if(req.url.includes('/file')){
+      //send file
     }
   }
   res.end();

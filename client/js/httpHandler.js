@@ -6,7 +6,7 @@
     $.ajax({
       type: 'GET',
       data: {},
-      url: serverUrl,
+      url: serverUrl + '/message',
       cache: false,
       contentType: false,
       processData: false,
