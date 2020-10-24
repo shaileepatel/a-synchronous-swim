@@ -2,25 +2,26 @@
 
   const serverUrl = 'http://127.0.0.1:3000';
 
-  // const ajaxGetCommand = () => {
-  //   $.ajax({
-  //     type: 'GET',
-  //     data: {},
-  //     url: serverUrl,
-  //     cache: false,
-  //     contentType: false,
-  //     processData: false,
-  //     success: (data) => {
-  //       console.log(data);
-  //     },
-  //     error: () => {
-  //       console.log('error');
-  //     }
-  //   });
-  // };
+  const ajaxGetCommand = () => {
+    $.ajax({
+      type: 'GET',
+      data: {},
+      url: serverUrl,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: (data) => {
+        console.log(data);
+        SwimTeam.move(data);
+      },
+      error: () => {
+        console.log('error');
+      }
+    });
+  };
 
   // ajaxGetCommand();
-
+  setInterval(ajaxGetCommand, 5000);
   /////////////////////////////////////////////////////////////////////
   // The ajax file uplaoder is provided for your convenience!
   // Note: remember to fix the URL below.
