@@ -15,14 +15,22 @@ describe('server responses', () => {
 
     httpHandler.router(req, res);
     expect(res._responseCode).to.equal(200);
-    expect(res._ended).to.equal(true);
+    expect(res._ended
+      ).to.equal(true);
     expect(res._data.toString()).to.be.empty;
 
     done();
   });
 
   it('should respond to a GET request for a swim command', (done) => {
-    // write your test here
+
+    // let {req, res} = server.mock('/', 'GET');
+
+    // httpHandler.router(req, res, () => {
+    //   expect(res._responseCode).to.equal(404);
+    //   expect(res._ended).to.equal(true);
+    //   done();
+    // });
     done();
   });
 
